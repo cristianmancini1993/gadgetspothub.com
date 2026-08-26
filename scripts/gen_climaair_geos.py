@@ -7,8 +7,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-UID = "018e3961-c73a-7965-8fc1-b1d91c869a42"
-WEBHOOK = "https://hook.eu2.make.com/i7pmea9fmpnepx94e5z6dxfwvl1bnnlh"
+UID = "0198c21c-8430-751a-a450-d7f01a76c3ee"
+WEBHOOK = "https://hook.eu2.make.com/7nudarijfrsvnhnwfnpqfh2t8vqt109i"
 
 GEOS = {
     "cz": {
@@ -17,9 +17,9 @@ GEOS = {
         "currency": "CZK",
         "now": "1 799 Kč",
         "was": "3 598 Kč",
-        "offer": "3296",
-        "lp": "3331",
-        "key": "2e911573b43a938cd5f4e1ea7dd831ca09a55cb2",
+        "offer": "3590",
+        "lp": "3627",
+        "key": "e5d307d9de4b10efb23d853246a0677d6b8c6f80",
         "ty_src": "cz/glacierair-3296/thank-you.html",
     },
     "es": {
@@ -28,9 +28,9 @@ GEOS = {
         "currency": "EUR",
         "now": "79,00€",
         "was": "158,00€",
-        "offer": "3345",
-        "lp": "3381",
-        "key": "966f56691d89d38b31d7e0b66079940f7053b299",
+        "offer": "3587",
+        "lp": "3624",
+        "key": "2af2c1ec0bbe33b257d37839f043b8beba23a806",
         "ty_src": "es/glacierair-3345/thank-you.html",
     },
     "pt": {
@@ -39,9 +39,9 @@ GEOS = {
         "currency": "EUR",
         "now": "89,00€",
         "was": "178,00€",
-        "offer": "3344",
-        "lp": "3380",
-        "key": "18a640cca42e03c2080deafc1b9c8a2e080b827e",
+        "offer": "3588",
+        "lp": "3625",
+        "key": "0f4b28c87f1287b7753a5379eabeb8581b83bb40",
         "ty_src": "pt/glacierair-3344/thank-you.html",
     },
     "sk": {
@@ -50,9 +50,9 @@ GEOS = {
         "currency": "EUR",
         "now": "69,00€",
         "was": "138,00€",
-        "offer": "4242",
-        "lp": "4282",
-        "key": "8394e527c08d4895581cafd27c1525af627df57e",
+        "offer": "3589",
+        "lp": "3626",
+        "key": "5ac3efddc05cb9c3f1be79aa221072f4def341f7",
         "ty_src": "sk/glacierair-4242/thank-you.html",
     },
     "hu": {
@@ -61,9 +61,9 @@ GEOS = {
         "currency": "HUF",
         "now": "39 900 Ft",
         "was": "79 800 Ft",
-        "offer": "3295",
-        "lp": "3330",
-        "key": "2cca5eb446c005b630e493e1d6881a3ad4049e87",
+        "offer": "3431",
+        "lp": "3467",
+        "key": "2a933fff3f54a5436980d423bd4fe776adb2d052",
         "ty_src": "hu/glacierair-3295/thank-you.html",
     },
     "lv": {
@@ -72,9 +72,9 @@ GEOS = {
         "currency": "EUR",
         "now": "89,00€",
         "was": "178,00€",
-        "offer": "4243",
-        "lp": "4283",
-        "key": "c1061e58cf3bfd47bb5b66d084d7e09167b3c945",
+        "offer": "4241",
+        "lp": "4281",
+        "key": "cbfe35078931603dbf1d617f67c379ac0d9c3ab7",
         "ty_src": "lv/glacierair-4243/thank-you.html",
     },
 }
