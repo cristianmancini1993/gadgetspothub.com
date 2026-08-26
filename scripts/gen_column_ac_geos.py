@@ -1288,6 +1288,7 @@ window.SITE_CONFIG = {{
   gtag('event', 'conversion', {{
       'send_to': 'AW-18358316754/8U5lCMOvn90cENLd9rFE',
       'transaction_id': ''
+      // 'new_customer': true /* calculate dynamically, populate with true/false */,
   }});
 </script>
 
