@@ -144,12 +144,12 @@ window.SITE_CONFIG = {
       <h2>Töltse ki a rendelési űrlapot</h2>
       <p>Felvesszük a kapcsolatot a szállítási adatok megerősítéséhez.</p>
       <form class="tm-order-form order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
-        <label for="name">Név*</label>
-        <input id="name" type="text" name="name" autocomplete="name" placeholder="Kovács János" required><br>
+        <label for="name">Keresztnév Vezetéknév*</label>
+        <input id="name" type="text" name="name" autocomplete="name" placeholder="Keresztnév Vezetéknév" required><br>
+        <label for="street-address">Cím*</label>
+        <input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Cím" required><br>
         <label for="tel">Telefon*</label>
-        <input id="tel" type="tel" name="tel" autocomplete="tel" placeholder="+36 30 123 4567" required><br>
-        <label for="street-address">Szállítási cím*</label>
-        <input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Fő utca 10, 1051 Budapest" required><br>
+        <input id="tel" type="tel" name="tel" autocomplete="tel" placeholder="Telefon" required><br>
         <input name="uid" type="hidden" value="0198c21c-8430-751a-a450-d7f01a76c3ee" />
         <input name="offer" type="hidden" value="3431" />
         <input name="lp" type="hidden" value="3467" />
@@ -157,7 +157,7 @@ window.SITE_CONFIG = {
         <input name="webhook" type="hidden" value="https://hook.eu2.make.com/7nudarijfrsvnhnwfnpqfh2t8vqt109i"/>
         <input name="_key" type="hidden" value="2a933fff3f54a5436980d423bd4fe776adb2d052" />
         <div style="margin-top: 10px; text-align: center">
-          <button name="submit" type="submit">MEGVESZEM MOST</button>
+          <button name="submit" type="submit">Rendeljen most</button>
         </div>
         <p class="form-note">🔒 Nincs előleg · Fizetés átvételkor · Szállítás 24/48 óra</p>
         <script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
