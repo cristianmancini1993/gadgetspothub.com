@@ -2,13 +2,13 @@
 <html lang="cs">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18360728507"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18358316754"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'AW-18360728507');
+  gtag('config', 'AW-18358316754');
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -217,12 +217,6 @@ window.SITE_CONFIG = {
 </script>
 <script src="/assets/js/tracking.js" defer></script>
 <script src="/assets/js/main.js" defer></script>
-<script>
-// Trigger Purchase / conversion event after page load
-window.addEventListener('load', function () {
-  if (window.trackPurchase) window.trackPurchase(2390.0, 'CZK');
-});
-</script>
 </head>
 <body>
 
@@ -304,44 +298,22 @@ window.addEventListener('load', function () {
     <div>
       <h4 class="site-footer__heading">Kontakt</h4>
       <ul class="site-footer__list">
-        <li><strong>Vicequattrostrade Srl</strong></li>
-        <li>Via Giosuè Carducci, 30, 28838 Stresa, Italy</li>
+        <li><strong>Netmart LLC</strong></li>
+        <li>County of Sussex 16192 Coastal Hwy, Lewes, DE 19958-3608, United States</li>
         <li><a href="mailto:info@gadgetspothub.com">info@gadgetspothub.com</a></li>
       </ul>
     </div>
   </div>
-  <div class="site-footer__bottom">© <span data-year>2026</span> <strong>Vicequattrostrade Srl</strong> — Všechna práva vyhrazena. <a href="/">gadgetspothub.com</a></div>
+  <div class="site-footer__bottom">© <span data-year>2026</span> <strong>Netmart LLC</strong> — Všechna práva vyhrazena. <a href="/">gadgetspothub.com</a></div>
 </div></footer>
 
-<!-- Google Ads Purchase conversion — value = CPA/CPL EUR for offer #3296 -->
 <!-- Event snippet for Purchase conversion page -->
 <script>
-  (function () {
-    var p = new URLSearchParams(window.location.search);
-
-    function stored(name) {
-      try { return window.localStorage.getItem('df_' + name) || ''; }
-      catch (e) { return ''; }
-    }
-
-    var campaignId = p.get('campaign_id') || p.get('utm_campaign') || p.get('campaignid') || p.get('subid') || stored('campaign_id') || stored('utm_campaign') || stored('subid') || '';
-    var subid = p.get('subid') || campaignId || stored('subid') || '';
-    var transactionId = p.get('order_id') || p.get('transaction_id') || p.get('tid') || subid || '';
-
-    gtag('event', 'conversion', {
-      'send_to': 'AW-18360728507/piRMCJP23tkcEOiR9rJE',
-      'value': 15.0,
-      'currency': 'EUR',
-      'transaction_id': transactionId,
-      'campaign_id': campaignId,
-      'subid': subid,
-      'utm_campaign': p.get('utm_campaign') || campaignId,
-      'utm_source': p.get('utm_source') || stored('utm_source') || '',
-      'utm_medium': p.get('utm_medium') || stored('utm_medium') || '',
-      'utm_term': p.get('utm_term') || stored('utm_term') || '',
-      'utm_content': p.get('utm_content') || stored('utm_content') || ''
-    });
-  })();
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18358316754/8U5lCMOvn90cENLd9rFE',
+      'transaction_id': ''
+      // 'new_customer': true /* calculate dynamically, populate with true/false */,
+  });
 </script>
 
 </body>
