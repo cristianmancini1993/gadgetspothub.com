@@ -16,35 +16,35 @@ WH_OLD = "https://hook.eu2.make.com/i7pmea9fmpnepx94e5z6dxfwvl1bnnlh"
 
 GEOS = {
     "es": dict(
-        lang="es", price=17, now="€17", was="€34", now_ty="17 €",
+        lang="es", price=74, now="74,00€", was="148,00€", now_ty="74,00€", currency="EUR",
         offer="3587", lp="3624", key="2af2c1ec0bbe33b257d37839f043b8beba23a806",
         uid=UID_NEW, webhook=WH_NEW,
         ph_name="Juan García", ph_tel="+34 612 345 678",
         ph_addr="Calle Mayor 10, 28013 Madrid",
     ),
     "hu": dict(
-        lang="hu", price=17, now="€17", was="€34", now_ty="17 €",
+        lang="hu", price=24900, now="24 900 Ft", was="49 800 Ft", now_ty="24 900 Ft", currency="HUF",
         offer="3431", lp="3467", key="2a933fff3f54a5436980d423bd4fe776adb2d052",
         uid=UID_NEW, webhook=WH_NEW,
         ph_name="Kovács János", ph_tel="+36 30 123 4567",
         ph_addr="Fő utca 10, 1051 Budapest",
     ),
     "pl": dict(
-        lang="pl", price=19, now="€19", was="€38", now_ty="19 €",
+        lang="pl", price=299, now="299 zł", was="598 zł", now_ty="299 zł", currency="PLN",
         offer="3297", lp="3332", key="b1481d412446a8bcbc23a0ceb0587b19fd6d66fc",
         uid=UID_OLD, webhook=WH_OLD,
         ph_name="Jan Kowalski", ph_tel="+48 512 345 678",
         ph_addr="ul. Marszałkowska 10, 00-001 Warszawa",
     ),
     "pt": dict(
-        lang="pt", price=17, now="€17", was="€34", now_ty="17 €",
+        lang="pt", price=79, now="79,00€", was="158,00€", now_ty="79,00€", currency="EUR",
         offer="3588", lp="3625", key="0f4b28c87f1287b7753a5379eabeb8581b83bb40",
         uid=UID_NEW, webhook=WH_NEW,
         ph_name="João Silva", ph_tel="+351 912 345 678",
         ph_addr="Rua Augusta 10, 1100-053 Lisboa",
     ),
     "ro": dict(
-        lang="ro", price=20, now="€20", was="€40", now_ty="20 €",
+        lang="ro", price=399, now="399 lei", was="798 lei", now_ty="399 lei", currency="RON",
         offer="1298", lp="1317", key="dfa0121dc67d1076067284708b56bb71dcab03e0",
         uid=UID_OLD, webhook=WH_OLD,
         ph_name="Ion Popescu", ph_tel="+40 721 234 567",
@@ -60,18 +60,18 @@ def D(**langs: str) -> dict[str, str]:
 # Longer Italian strings first is applied at runtime.
 PACK: list[tuple[str, dict[str, str]]] = [
     ("T77 PRO™: taglia, rifila e sagoma con 2 batterie e motore brushless. 300 m² con una ricarica. Pagamento alla consegna. Oggi 99 € invece di 200 €.", D(
-        es="T77 PRO™: corta, recorta y perfila con 2 baterías y motor brushless. 300 m² con una carga. Pago contra reembolso. Hoy 17 € en lugar de 34 €.",
-        hu="T77 PRO™: vág, szegélyez és formáz 2 akkumulátorral és brushless motorral. 300 m² egy töltéssel. Utánvét. Ma 17 € 34 € helyett.",
-        pl="T77 PRO™: tnie, przycina i kształtuje z 2 bateriami i silnikiem brushless. 300 m² na jednym ładowaniu. Płatność przy odbiorze. Dziś 19 € zamiast 38 €.",
-        pt="T77 PRO™: corta, apara e perfila com 2 baterias e motor brushless. 300 m² com uma carga. Pagamento à cobrança. Hoje 17 € em vez de 34 €.",
-        ro="T77 PRO™: taie, tunde și profilează cu 2 baterii și motor brushless. 300 m² cu o încărcare. Plata ramburs. Azi 20 € în loc de 40 €.",
+        es="T77 PRO™: corta, recorta y perfila con 2 baterías y motor brushless. 300 m² con una carga. Pago contra reembolso. Hoy 74,00€ en lugar de 148,00€.",
+        hu="T77 PRO™: vág, szegélyez és formáz 2 akkumulátorral és brushless motorral. 300 m² egy töltéssel. Utánvét. Ma 24 900 Ft 49 800 Ft helyett.",
+        pl="T77 PRO™: tnie, przycina i kształtuje z 2 bateriami i silnikiem brushless. 300 m² na jednym ładowaniu. Płatność przy odbiorze. Dziś 299 zł zamiast 598 zł.",
+        pt="T77 PRO™: corta, apara e perfila com 2 baterias e motor brushless. 300 m² com uma carga. Pagamento à cobrança. Hoje 79,00€ em vez de 158,00€.",
+        ro="T77 PRO™: taie, tunde și profilează cu 2 baterii și motor brushless. 300 m² cu o încărcare. Plata ramburs. Azi 399 lei în loc de 798 lei.",
     )),
     ("T77 PRO — Decespugliatore a batteria brushless | 99 €", D(
-        es="T77 PRO — Desbrozadora a batería brushless | 17 €",
-        hu="T77 PRO — Akkus szegélynyíró brushless | 17 €",
-        pl="T77 PRO — Podkaszarka akumulatorowa brushless | 19 €",
-        pt="T77 PRO — Roçadora a bateria brushless | 17 €",
-        ro="T77 PRO — Motocoasă cu baterie brushless | 20 €",
+        es="T77 PRO — Desbrozadora a batería brushless | 74,00€",
+        hu="T77 PRO — Akkus szegélynyíró brushless | 24 900 Ft",
+        pl="T77 PRO — Podkaszarka akumulatorowa brushless | 299 zł",
+        pt="T77 PRO — Roçadora a bateria brushless | 79,00€",
+        ro="T77 PRO — Motocoasă cu baterie brushless | 399 lei",
     )),
     ("T77 PRO™: Taglia, rifila e sagoma con precisione millimetrica. Dimentica le seccature degli attrezzi vecchi: con soli <b>1,2 kg</b> e la potenza di <b>2 batterie agli ioni di litio da 60V</b>, prendersi cura del prato diventa un piacere rapido e leggero. Pura potenza, zero ostacoli.", D(
         es="T77 PRO™: Corta, recorta y perfila con precisión milimétrica. Olvídate de las molestias de las herramientas viejas: con solo <b>1,2 kg</b> y la potencia de <b>2 baterías de iones de litio de 60V</b>, cuidar el césped se vuelve rápido y ligero. Pura potencia, cero obstáculos.",
@@ -1190,6 +1190,7 @@ def generate_lp(geo: str, g: dict) -> str:
     )
     html = html.replace("GEO: 'it'", f"GEO: '{geo}'")
     html = html.replace("PRICE: 99", f"PRICE: {g['price']}")
+    html = html.replace("CURRENCY: 'EUR'", f"CURRENCY: '{g['currency']}'")
     html = html.replace("OFFER_NAME: 'T77 PRO 1274'", f"OFFER_NAME: 'T77 PRO {g['offer']}'")
     html = html.replace("LP_ID: 'it-1274'", f"LP_ID: '{geo}-{g['lp']}'")
     html = html.replace("€99", g["now"])
@@ -1205,6 +1206,7 @@ def generate_ty(geo: str, g: dict) -> str:
     html = html.replace('lang="it"', f'lang="{g["lang"]}"')
     html = html.replace("GEO: 'it'", f"GEO: '{geo}'")
     html = html.replace("PRICE: 99", f"PRICE: {g['price']}")
+    html = html.replace("CURRENCY: 'EUR'", f"CURRENCY: '{g['currency']}'")
     html = html.replace("99 €", g["now_ty"])
     html = html.replace('href="/it/', f'href="/{geo}/')
     return html
