@@ -9,46 +9,44 @@ IT_LP = ROOT / "grass-trimmer-t77-pro" / "index.html"
 IT_TY = ROOT / "grass-trimmer-t77-pro" / "thank-you.html"
 SITEMAP = ROOT / "sitemap.xml"
 
-UID_NEW = "0198c21c-8430-751a-a450-d7f01a76c3ee"
+UID_NEW = "0198c21d-3f64-7778-ab2d-90527716c341"
 WH_NEW = "https://hook.eu2.make.com/7nudarijfrsvnhnwfnpqfh2t8vqt109i"
-UID_OLD = "018e3961-c73a-7965-8fc1-b1d91c869a42"
-WH_OLD = "https://hook.eu2.make.com/i7pmea9fmpnepx94e5z6dxfwvl1bnnlh"
 
 GEOS = {
     "es": dict(
         lang="es", price=74, now="74,00€", was="148,00€", now_ty="74,00€", currency="EUR",
-        offer="3587", lp="3624", key="2af2c1ec0bbe33b257d37839f043b8beba23a806",
+        offer="1815", lp="1835", key="856b5671fbfa784b3d05bd41fb8a08636ee63d9e",
         uid=UID_NEW, webhook=WH_NEW,
-        ph_name="Juan García", ph_tel="+34 612 345 678",
-        ph_addr="Calle Mayor 10, 28013 Madrid",
+        ph_name="Nombre Apellido", ph_tel="Teléfono",
+        ph_addr="Dirección",
     ),
     "hu": dict(
         lang="hu", price=24900, now="24 900 Ft", was="49 800 Ft", now_ty="24 900 Ft", currency="HUF",
-        offer="3431", lp="3467", key="2a933fff3f54a5436980d423bd4fe776adb2d052",
+        offer="1820", lp="1840", key="82ebeb35b70348d39060fbe4912f04a72fca930b",
         uid=UID_NEW, webhook=WH_NEW,
-        ph_name="Kovács János", ph_tel="+36 30 123 4567",
-        ph_addr="Fő utca 10, 1051 Budapest",
+        ph_name="Vezetéknév Vezetéknév", ph_tel="Telefon",
+        ph_addr="Cím",
     ),
     "pl": dict(
         lang="pl", price=299, now="299 zł", was="598 zł", now_ty="299 zł", currency="PLN",
-        offer="3297", lp="3332", key="b1481d412446a8bcbc23a0ceb0587b19fd6d66fc",
-        uid=UID_OLD, webhook=WH_OLD,
-        ph_name="Jan Kowalski", ph_tel="+48 512 345 678",
-        ph_addr="ul. Marszałkowska 10, 00-001 Warszawa",
+        offer="24", lp="32", key="cb6fb56ff381be6bd671f97c905c8033d02b02e3",
+        uid=UID_NEW, webhook=WH_NEW,
+        ph_name="Imię i nazwisko", ph_tel="Numer telefonnu",
+        ph_addr="Adres",
     ),
     "pt": dict(
         lang="pt", price=79, now="79,00€", was="158,00€", now_ty="79,00€", currency="EUR",
-        offer="3588", lp="3625", key="0f4b28c87f1287b7753a5379eabeb8581b83bb40",
+        offer="1816", lp="1836", key="b16a4e56818e45570a31677d2358cd9094c04df2",
         uid=UID_NEW, webhook=WH_NEW,
-        ph_name="João Silva", ph_tel="+351 912 345 678",
-        ph_addr="Rua Augusta 10, 1100-053 Lisboa",
+        ph_name="Nome Sobrenome", ph_tel="Telefone",
+        ph_addr="Endereço",
     ),
     "ro": dict(
         lang="ro", price=399, now="399 lei", was="798 lei", now_ty="399 lei", currency="RON",
-        offer="1298", lp="1317", key="dfa0121dc67d1076067284708b56bb71dcab03e0",
-        uid=UID_OLD, webhook=WH_OLD,
-        ph_name="Ion Popescu", ph_tel="+40 721 234 567",
-        ph_addr="Str. Victoriei 10, 010061 București",
+        offer="2637", lp="2664", key="632b67823616823cf0755d177dcb976890e893a7",
+        uid=UID_NEW, webhook=WH_NEW,
+        ph_name="Nome e cognome", ph_tel="Telefono",
+        ph_addr="Indirizzo",
     ),
 }
 
