@@ -12,62 +12,61 @@ SITEMAP = ROOT / "sitemap.xml"
 
 UID_NEW = "0198c21d-3f64-7778-ab2d-90527716c341"
 WH_NEW = "https://hook.eu2.make.com/7nudarijfrsvnhnwfnpqfh2t8vqt109i"
-UID_CZ = "0198c21c-8430-751a-a450-d7f01a76c3ee"
 
 GEOS = {
     "cz": dict(
         lang="cs", price=1799, now="1 799 Kč", was="5 990 Kč", currency="CZK",
-        offer="3590", lp="3627", key="e5d307d9de4b10efb23d853246a0677d6b8c6f80",
-        uid=UID_CZ, webhook=WH_NEW, country="České republice",
+        offer="1945", lp="1965", key="58a99b5fd0a2d651c8eb47e8f70e5be568b69e62",
+        uid=UID_NEW, webhook=WH_NEW, country="České republice",
         btn="Objednat nyní",
         fields=[
-            ("name", "Jméno a příjmení*", "Jan Novák"),
-            ("tel", "Telefon*", "+420 601 123 456"),
-            ("street-address", "Doručovací adresa*", "Ulice 10, 110 00 Praha"),
+            ("name", "Jméno Příjmení*", "Jméno Příjmení"),
+            ("street-address", "Adresa*", "Adresa"),
+            ("tel", "Telefon*", "Telefon"),
         ],
     ),
     "es": dict(
         lang="es", price=69, now="69,00€", was="230,00€", currency="EUR",
-        offer="1815", lp="1835", key="856b5671fbfa784b3d05bd41fb8a08636ee63d9e",
+        offer="1013", lp="1032", key="a961f90a8e79db837d16b3b00aa2cc6e2fdf9e18",
         uid=UID_NEW, webhook=WH_NEW, country="España",
-        btn="Haz tu pedido",
+        btn="Envía tu pedido",
         fields=[
-            ("name", "Nombre Apellido*", "Nombre Apellido"),
+            ("name", "Nombre completo*", "Nombre completo"),
+            ("tel", "Número de teléfono*", "Número de teléfono"),
             ("street-address", "Dirección*", "Dirección"),
-            ("tel", "Teléfono*", "Teléfono"),
         ],
     ),
     "lt": dict(
         lang="lt", price=64, now="64,00€", was="213,00€", currency="EUR",
-        offer="1816", lp="1836", key="b16a4e56818e45570a31677d2358cd9094c04df2",
+        offer="1427", lp="1447", key="c771c5f7b9ab17faa0d654fc0322917fd2ca7c53",
         uid=UID_NEW, webhook=WH_NEW, country="Lietuvoje",
-        btn="Užsakyti dabar",
+        btn="Užsisakykite dabar",
         fields=[
             ("name", "Vardas Pavardė*", "Vardas Pavardė"),
             ("tel", "Telefonas*", "Telefonas"),
-            ("street-address", "Pristatymo adresas*", "Pristatymo adresas"),
+            ("street-address", "Adresas*", "Adresas"),
         ],
     ),
     "pl": dict(
         lang="pl", price=399, now="399 zł", was="1 330 zł", currency="PLN",
-        offer="24", lp="32", key="cb6fb56ff381be6bd671f97c905c8033d02b02e3",
+        offer="1429", lp="1449", key="a0252837115b00b1bc24856e441623c86a75bb28",
         uid=UID_NEW, webhook=WH_NEW, country="Polsce",
-        btn="Wyślij Zamówienie",
+        btn="Zamów teraz",
         fields=[
-            ("name", "Imię i nazwisko*", "Imię i nazwisko"),
-            ("tel", "Numer telefonnu*", "Numer telefonnu"),
+            ("name", "Imię Nazwisko*", "Imię Nazwisko"),
+            ("tel", "Telefon*", "Telefon"),
             ("street-address", "Adres*", "Adres"),
         ],
     ),
     "pt": dict(
         lang="pt", price=79, now="79,00€", was="263,00€", currency="EUR",
-        offer="1816", lp="1836", key="b16a4e56818e45570a31677d2358cd9094c04df2",
+        offer="1014", lp="1033", key="629ae0c6c5cef1a64b90eef863905760e741e981",
         uid=UID_NEW, webhook=WH_NEW, country="Portugal",
-        btn="Encomendar agora",
+        btn="Enviar o pedido",
         fields=[
-            ("name", "Nome Sobrenome*", "Nome Sobrenome"),
-            ("street-address", "Endereço*", "Endereço"),
+            ("name", "Nome e sobrenome*", "Nome e sobrenome"),
             ("tel", "Telefone*", "Telefone"),
+            ("street-address", "Endereço*", "Endereço"),
         ],
     ),
 }
