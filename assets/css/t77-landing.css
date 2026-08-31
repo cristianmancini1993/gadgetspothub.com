@@ -276,18 +276,22 @@ html, body {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-wrap: nowrap;
 }
 .c4x-old-price {
   font-size: 28px;
   font-weight: 700;
   color: #999999;
   text-decoration: line-through;
+  white-space: nowrap;
+  line-height: 1;
 }
 .c4x-new-price {
   font-size: 48px;
   font-weight: 900;
   color: #007e41;
   line-height: 1;
+  white-space: nowrap;
 }
 .c4x-stock-bar {
   width: 100%;
@@ -316,10 +320,30 @@ html, body {
     width: 100%;
     justify-content: center;
     text-align: center;
+    padding: 14px 12px;
+    gap: 12px;
+    box-sizing: border-box;
   }
   .c4x-price-top {
     justify-content: center;
+    align-items: center;
     width: 100%;
+    gap: 10px 12px;
+    flex-wrap: wrap;
+  }
+  .c4x-sale-badge {
+    font-size: 16px;
+    padding: 8px 10px;
+    flex-shrink: 0;
+  }
+  .c4x-price-row {
+    gap: 8px;
+  }
+  .c4x-new-price {
+    font-size: clamp(26px, 8vw, 40px);
+  }
+  .c4x-old-price {
+    font-size: clamp(15px, 4.2vw, 22px);
   }
   .c4x-stock-text {
     text-align: center;
