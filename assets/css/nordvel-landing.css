@@ -1,0 +1,158 @@
+/* Nordvel accent — bright red, scoped so T77 green landings stay untouched */
+:root {
+  --nv-red: #cf2e2e;
+  --nv-red-dark: #b91912;
+  --nv-red-soft: #fdecec;
+  --nv-red-mid: #f8d0d0;
+  --nv-red-glow: rgba(207, 46, 46, 0.28);
+}
+
+.trim-hero {
+  background: linear-gradient(180deg, #fff5f5 0%, #ffffff 100%);
+}
+
+.trim-badge {
+  background: var(--nv-red-soft);
+  color: var(--nv-red-dark);
+}
+
+.trim-green-highlight,
+.trim-new-price,
+.c4x-new-price {
+  color: var(--nv-red);
+}
+
+.trim-cta,
+.t77bn-cta,
+.tm-order-form button[type="submit"],
+.c4x-trust-icon,
+.kit-table-header {
+  background: var(--nv-red);
+}
+
+.trim-cta {
+  box-shadow: 0 12px 26px var(--nv-red-glow);
+}
+
+.c4x-trust-item:hover {
+  box-shadow: 0 8px 20px rgba(207, 46, 46, 0.1);
+  border-color: var(--nv-red-mid);
+}
+
+.c4x-trust-icon {
+  box-shadow: 0 5px 12px rgba(207, 46, 46, 0.2);
+}
+
+.t77bx-sec {
+  background: linear-gradient(150deg, #1a0c0c 0%, #241111 55%, #160a0a 100%);
+}
+
+.t77bx-frame {
+  background: linear-gradient(140deg, rgba(255, 107, 107, 0.5), rgba(207, 46, 46, 0.16) 55%, rgba(255, 255, 255, 0.05));
+}
+
+.t77bx-chip,
+.t77bx-eyebrow,
+.t77bx-txt strong,
+.t77bx-final b {
+  color: #ff6b6b;
+}
+
+.t77bx-eyebrow span {
+  background: #ff6b6b;
+}
+
+.t77bx-card--key {
+  border-left-color: #ff6b6b;
+  background: rgba(207, 46, 46, 0.16);
+}
+
+.t77bx-ic {
+  background: rgba(207, 46, 46, 0.18);
+}
+
+.t77bx-note {
+  border-left-color: rgba(255, 107, 107, 0.35);
+}
+
+.t77bn-sec {
+  background: linear-gradient(180deg, #ffffff 0%, #fff5f5 100%);
+}
+
+.t77bn-label,
+.t77bn-ic,
+.kit-label,
+.faq-label,
+.review-badge {
+  background: var(--nv-red-soft);
+  color: var(--nv-red);
+}
+
+.t77bn-row {
+  border-color: #f3d6d6;
+  box-shadow: 0 16px 40px rgba(80, 20, 20, 0.07);
+}
+
+.t77bn-media::after {
+  border-color: rgba(207, 46, 46, 0.16);
+}
+
+.t77bn-hl {
+  background: var(--nv-red-soft);
+  border-left-color: var(--nv-red);
+  color: #7a1515;
+}
+
+.t77bn-cta {
+  box-shadow: 0 16px 32px var(--nv-red-glow);
+}
+
+.t77bn-cta:hover {
+  box-shadow: 0 20px 38px rgba(207, 46, 46, 0.38);
+}
+
+.kit-section {
+  background: linear-gradient(180deg, #ffffff 0%, #fff7f7 100%);
+}
+
+.faq-item summary strong {
+  background: var(--nv-red-soft);
+  color: var(--nv-red);
+}
+
+.t77-order-card {
+  box-shadow: 0 12px 28px rgba(207, 46, 46, 0.08);
+}
+
+.tm-order-form input:focus {
+  border-color: var(--nv-red);
+  box-shadow: 0 0 0 3px rgba(207, 46, 46, 0.18);
+}
+
+.tm-order-form button[type="submit"] {
+  box-shadow: 0 12px 24px var(--nv-red-glow);
+}
+
+/* thank-you */
+.ty-check {
+  border-color: var(--nv-red);
+  color: var(--nv-red);
+  box-shadow: 0 4px 12px -4px rgba(207, 46, 46, 0.28);
+}
+
+.ty-product__price {
+  color: var(--nv-red);
+}
+
+.ty-action {
+  background: #fef2f2;
+  border-color: #f5c2c2;
+}
+
+.ty-action__eyebrow {
+  color: var(--nv-red-dark);
+}
+
+.ty-steps-list li::before {
+  color: var(--nv-red);
+}
