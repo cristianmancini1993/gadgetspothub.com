@@ -55,10 +55,17 @@
   }
 
   function validateField(field) {
-    const input = field.querySelector('.cod-form__input');
+    const input = field.querySelector('.cod-form__input, input[type="checkbox"]');
     if (!input) return true;
-    const value = input.value.trim();
+    const value = (input.value || '').trim();
     let valid = true;
+
+    if (input.type === 'checkbox') {
+      valid = !input.required || input.checked;
+      field.classList.toggle('has-error', !valid);
+      input.classList.toggle('is-invalid', !valid);
+      return valid;
+    }
 
     if (input.required && !value) valid = false;
 

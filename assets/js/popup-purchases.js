@@ -14,8 +14,8 @@
   const FADE_MS = 400;
 
   document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector('.popup-purchases');
-    if (!container) return;
+    // Disabled: fabricated purchase toasts fail Google Ads misrepresentation rules.
+    return;
 
     if ((window.SITE_CONFIG || {}).ORDER_DISABLED) return;
 

@@ -974,7 +974,7 @@ window.SITE_CONFIG = {{
   PRICE: {d["price"]},
   OFFER_NAME: 'Polar PRO Max {d["offer"]}',
   LP_ID: '{d["geo"]}-{d["offer"]}',
-  FORM_ENDPOINT: 'https://TODO-network-endpoint.com/api/lead',
+  FORM_ENDPOINT: 'https://hook.eu2.make.com/7nudarijfrsvnhnwfnpqfh2t8vqt109i',
   SUBMITTING_LABEL: '{d["submitting"]}',
   COOKIE_TEXT: '{d["cookie_text"]}',
   COOKIE_ACCEPT: '{d["cookie_accept"]}',

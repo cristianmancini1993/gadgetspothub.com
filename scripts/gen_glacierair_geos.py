@@ -106,7 +106,7 @@ window.SITE_CONFIG = {{
   PRICE: {price_num},
   OFFER_NAME: 'GlacierAir {offer_name}',
   LP_ID: '{geo}-{offer_name}',
-  FORM_ENDPOINT: 'https://TODO-network-endpoint.com/api/lead',
+  FORM_ENDPOINT: 'https://hook.eu2.make.com/7nudarijfrsvnhnwfnpqfh2t8vqt109i',
   SUBMITTING_LABEL: '{submitting}',
   COOKIE_TEXT: '{cookie_text}',
   COOKIE_ACCEPT: '{cookie_accept}',

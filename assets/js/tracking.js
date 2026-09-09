@@ -295,8 +295,112 @@
     });
   }
 
+  function privacyCopy(geo) {
+    const g = geo || 'en';
+    const privacy = '/' + g + '/privacy-policy.html';
+    const terms = '/' + g + '/terms-conditions.html';
+    const map = {
+      it: 'Ho letto e accetto la <a href="' + privacy + '" target="_blank" rel="noopener">Privacy Policy</a> e i <a href="' + terms + '" target="_blank" rel="noopener">Termini</a>.',
+      es: 'He leído y acepto la <a href="' + privacy + '" target="_blank" rel="noopener">Política de privacidad</a> y los <a href="' + terms + '" target="_blank" rel="noopener">Términos</a>.',
+      pt: 'Li e aceito a <a href="' + privacy + '" target="_blank" rel="noopener">Política de Privacidade</a> e os <a href="' + terms + '" target="_blank" rel="noopener">Termos</a>.',
+      fr: 'J’ai lu et j’accepte la <a href="' + privacy + '" target="_blank" rel="noopener">politique de confidentialité</a> et les <a href="' + terms + '" target="_blank" rel="noopener">conditions</a>.',
+      de: 'Ich habe die <a href="' + privacy + '" target="_blank" rel="noopener">Datenschutzerklärung</a> und die <a href="' + terms + '" target="_blank" rel="noopener">AGB</a> gelesen und akzeptiere sie.',
+      pl: 'Przeczytałem/am i akceptuję <a href="' + privacy + '" target="_blank" rel="noopener">Politykę prywatności</a> oraz <a href="' + terms + '" target="_blank" rel="noopener">Regulamin</a>.',
+      cs: 'Přečetl/a jsem si a souhlasím se <a href="' + privacy + '" target="_blank" rel="noopener">zásadami ochrany osobních údajů</a> a <a href="' + terms + '" target="_blank" rel="noopener">podmínkami</a>.',
+      sk: 'Prečítal/a som si a súhlasím so <a href="' + privacy + '" target="_blank" rel="noopener">zásadami ochrany osobných údajov</a> a <a href="' + terms + '" target="_blank" rel="noopener">podmienkami</a>.',
+      hu: 'Elolvastam és elfogadom az <a href="' + privacy + '" target="_blank" rel="noopener">Adatvédelmi tájékoztatót</a> és a <a href="' + terms + '" target="_blank" rel="noopener">Feltételeket</a>.',
+      ro: 'Am citit și accept <a href="' + privacy + '" target="_blank" rel="noopener">Politica de confidențialitate</a> și <a href="' + terms + '" target="_blank" rel="noopener">Termenii</a>.',
+      sl: 'Prebral/a sem in sprejemam <a href="' + privacy + '" target="_blank" rel="noopener">politiko zasebnosti</a> in <a href="' + terms + '" target="_blank" rel="noopener">pogoje</a>.',
+      hr: 'Pročitao/la sam i prihvaćam <a href="' + privacy + '" target="_blank" rel="noopener">Politiku privatnosti</a> i <a href="' + terms + '" target="_blank" rel="noopener">Uvjete</a>.',
+      lt: 'Perskaičiau ir sutinku su <a href="' + privacy + '" target="_blank" rel="noopener">privatumo politika</a> ir <a href="' + terms + '" target="_blank" rel="noopener">sąlygomis</a>.',
+      lv: 'Esmu izlasījis/-usi un piekrītu <a href="' + privacy + '" target="_blank" rel="noopener">privātuma politikai</a> un <a href="' + terms + '" target="_blank" rel="noopener">noteikumiem</a>.',
+      et: 'Olen lugenud ja nõustun <a href="' + privacy + '" target="_blank" rel="noopener">privaatsuspoliitika</a> ja <a href="' + terms + '" target="_blank" rel="noopener">tingimustega</a>.',
+      el: 'Έχω διαβάσει και αποδέχομαι την <a href="' + privacy + '" target="_blank" rel="noopener">Πολιτική απορρήτου</a> και τους <a href="' + terms + '" target="_blank" rel="noopener">Όρους</a>.',
+      bg: 'Прочетох и приемам <a href="' + privacy + '" target="_blank" rel="noopener">Политиката за поверителност</a> и <a href="' + terms + '" target="_blank" rel="noopener">Условията</a>.'
+    };
+    const byGeo = {
+      it: map.it, es: map.es, pt: map.pt, fr: map.fr, de: map.de, pl: map.pl,
+      cz: map.cs, sk: map.sk, hu: map.hu, ro: map.ro, si: map.sl, hr: map.hr,
+      lt: map.lt, lv: map.lv, ee: map.et, gr: map.el, bg: map.bg, en: null
+    };
+    if (byGeo[g]) return byGeo[g];
+    return 'I have read and accept the <a href="' + privacy + '" target="_blank" rel="noopener">Privacy Policy</a> and <a href="' + terms + '" target="_blank" rel="noopener">Terms</a>.';
+  }
+
+  function siteGeo() {
+    if (C.GEO) return C.GEO;
+    const lang = (document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
+    return { cs: 'cz', el: 'gr', sl: 'si' }[lang] || lang;
+  }
+
+  function isOrderForm(form) {
+    if (!form || form.tagName !== 'FORM') return false;
+    if (form.classList.contains('tm-order-form') || form.classList.contains('cod-form') || form.classList.contains('order-form')) return true;
+    return !!(form.querySelector('input[name="tel"], input[name="phone"]') && form.querySelector('input[name="name"]'));
+  }
+
+  function injectPrivacyConsent(form) {
+    if (!isOrderForm(form) || form.querySelector('[name="privacy_consent"]')) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'cod-form__field df-consent-field';
+    wrap.innerHTML = '<label class="df-consent-label">'
+      + '<input type="checkbox" name="privacy_consent" value="1" required>'
+      + '<span>' + privacyCopy(siteGeo()) + '</span>'
+      + '</label>';
+    const submitBtn = form.querySelector('button[type="submit"], button[name="submit"]');
+    if (submitBtn) submitBtn.parentNode.insertBefore(wrap, submitBtn);
+    else form.appendChild(wrap);
+
+    form.addEventListener('submit', function (e) {
+      const box = form.querySelector('[name="privacy_consent"]');
+      if (box && !box.checked) {
+        e.preventDefault();
+        e.stopPropagation();
+        wrap.classList.add('has-error');
+        box.focus();
+      }
+    }, true);
+  }
+
+  function initCookieBanner() {
+    if (window.__dfCookieBannerInit) return;
+    window.__dfCookieBannerInit = true;
+    const KEY = 'df_cookie_consent';
+    try {
+      if (localStorage.getItem(KEY)) return;
+    } catch (e) {
+      return;
+    }
+    const banner = document.createElement('div');
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Cookie consent');
+    banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#0f172a;color:#fff;padding:1rem;z-index:1000;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem;font-size:0.875rem;box-shadow:0 -4px 12px rgba(0,0,0,0.2)';
+    const cookieText = C.COOKIE_TEXT || 'We use cookies to improve your experience and for analytics.';
+    const cookieAccept = C.COOKIE_ACCEPT || 'Accept';
+    const cookieLearn = C.COOKIE_LEARN || 'Learn more';
+    banner.innerHTML = '<span>' + cookieText + '</span>'
+      + '<a href="/' + siteGeo() + '/cookie-policy.html" style="color:#86efac;text-decoration:underline">' + cookieLearn + '</a>'
+      + '<button type="button" id="df-cookie-ok" style="background:#16a34a;color:#fff;border:none;padding:0.5rem 1.25rem;border-radius:0.375rem;cursor:pointer;font-weight:700">' + cookieAccept + '</button>';
+    document.body.appendChild(banner);
+    document.getElementById('df-cookie-ok').addEventListener('click', function () {
+      try { localStorage.setItem(KEY, '1'); } catch (err) {}
+      banner.remove();
+    });
+  }
+
+  function injectConsentStyles() {
+    if (document.getElementById('df-consent-style')) return;
+    const style = document.createElement('style');
+    style.id = 'df-consent-style';
+    style.textContent = '.df-consent-field{margin:12px 0;text-align:left}.df-consent-label{display:flex;align-items:flex-start;gap:8px;font-size:13px;line-height:1.4;cursor:pointer}.df-consent-label input{margin-top:3px;flex-shrink:0}.df-consent-label a{color:inherit;text-decoration:underline}.df-consent-field.has-error{outline:2px solid #dc2626;outline-offset:4px;border-radius:6px}';
+    document.head.appendChild(style);
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
+    injectConsentStyles();
+    initCookieBanner();
     wireCashboltForms(getTrackingContext());
+    document.querySelectorAll('form').forEach(injectPrivacyConsent);
   });
 })();
 
