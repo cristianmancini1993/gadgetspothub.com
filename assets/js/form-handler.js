@@ -9,8 +9,8 @@
   }
 
   function getTrackingContext() {
-    if (window.getLifepickshopTrackingContext) {
-      return window.getLifepickshopTrackingContext();
+    if (window.getGadgetspothubTrackingContext) {
+      return window.getGadgetspothubTrackingContext();
     }
 
     const urlSubid = getURLParam('subid');
@@ -30,8 +30,8 @@
   }
 
   function appendTrackingParams(url, context) {
-    if (window.appendLifepickshopTrackingParams) {
-      return window.appendLifepickshopTrackingParams(url, context);
+    if (window.appendGadgetspothubTrackingParams) {
+      return window.appendGadgetspothubTrackingParams(url, context);
     }
 
     const out = new URL(url, window.location.origin);
@@ -161,14 +161,25 @@
           mode: 'no-cors',
         });
       } else {
-        // No endpoint configured: log payload for debugging
-        console.log('[form-handler] FORM_ENDPOINT not configured. Payload:', payload);
+        // FORM_ENDPOINT not configured — do not fake a successful order
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = submitBtn.dataset.originalText || 'Ordina ora';
+        }
+        const errorMsg = document.createElement('p');
+        errorMsg.style.cssText = 'color:#dc2626;font-weight:600;margin-top:0.75rem;text-align:center';
+        errorMsg.textContent = (C.FORM_ERROR_LABEL) || 'Servizio temporaneamente non disponibile. Riprova più tardi.';
+        const formEl = submitBtn ? submitBtn.closest('form') : null;
+        if (formEl && !formEl.querySelector('.form-error-msg')) {
+          errorMsg.className = 'form-error-msg';
+          formEl.appendChild(errorMsg);
+        }
+        return; // do NOT redirect to thank-you
       }
       if (window.trackLead) window.trackLead();
       window.location.href = tyURL;
     } catch (err) {
       console.error('[form-handler] submit error', err);
-      // Fallback: still redirect, do not lose the lead
       if (window.trackLead) window.trackLead();
       window.location.href = tyURL;
     }

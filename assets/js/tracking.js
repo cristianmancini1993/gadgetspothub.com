@@ -196,15 +196,15 @@
     });
   }
 
-  window.getLifepickshopTrackingContext = getTrackingContext;
-  window.appendLifepickshopTrackingParams = appendTrackingParams;
-  window.markLifepickshopCashboltSubmit = markCashboltFormSubmitted;
+  window.getGadgetspothubTrackingContext = getTrackingContext;
+  window.appendGadgetspothubTrackingParams = appendTrackingParams;
+  window.markGadgetspothubCashboltSubmit = markCashboltFormSubmitted;
   // Legacy aliases
-  window.getDevicegroveTrackingContext = getTrackingContext;
-  window.appendDevicegroveTrackingParams = appendTrackingParams;
-  window.markDevicegroveCashboltSubmit = markCashboltFormSubmitted;
+  window.getGadgetspothubTrackingContext = getTrackingContext;
+  window.appendGadgetspothubTrackingParams = appendTrackingParams;
+  window.markGadgetspothubCashboltSubmit = markCashboltFormSubmitted;
 
-  window.fireLifepickshopThankYouConversion = function (options) {
+  window.fireGadgetspothubThankYouConversion = function (options) {
     options = options || {};
     const cfg = window.SITE_CONFIG || {};
 
@@ -253,7 +253,7 @@
     clearCashboltSubmitMarkers();
     return true;
   };
-  window.fireDevicegroveThankYouConversion = window.fireLifepickshopThankYouConversion;
+  window.fireGadgetspothubThankYouConversion = window.fireGadgetspothubThankYouConversion;
 
   captureClickIds();
 
@@ -407,7 +407,7 @@
 // ---- PUBLIC API ----
 window.trackInitiateCheckout = function () {
   const C = window.SITE_CONFIG || {};
-  const T = window.getLifepickshopTrackingContext ? window.getLifepickshopTrackingContext() : {};
+  const T = window.getGadgetspothubTrackingContext ? window.getGadgetspothubTrackingContext() : {};
   if (window.fbq) window.fbq('track', 'InitiateCheckout');
   if (window.gtag && C.GOOGLE_ADS_CONVERSION_ID) {
     window.gtag('event', 'begin_checkout', {
@@ -422,7 +422,7 @@ window.trackInitiateCheckout = function () {
 
 window.trackLead = function () {
   const C = window.SITE_CONFIG || {};
-  const T = window.getLifepickshopTrackingContext ? window.getLifepickshopTrackingContext() : {};
+  const T = window.getGadgetspothubTrackingContext ? window.getGadgetspothubTrackingContext() : {};
   if (window.fbq) window.fbq('track', 'Lead');
   if (window.gtag && C.GOOGLE_ADS_CONVERSION_ID && C.GOOGLE_ADS_CONVERSION_LABEL) {
     window.gtag('event', 'conversion', {
@@ -438,12 +438,12 @@ window.trackLead = function () {
 };
 
 window.trackPurchase = function (value, currency) {
-  if (window.fireLifepickshopThankYouConversion) {
-    return window.fireLifepickshopThankYouConversion({ value: value, currency: currency });
+  if (window.fireGadgetspothubThankYouConversion) {
+    return window.fireGadgetspothubThankYouConversion({ value: value, currency: currency });
   }
 
   const C = window.SITE_CONFIG || {};
-  const T = window.getLifepickshopTrackingContext ? window.getLifepickshopTrackingContext() : {};
+  const T = window.getGadgetspothubTrackingContext ? window.getGadgetspothubTrackingContext() : {};
   if (window.fbq) {
     window.fbq('track', 'Purchase', {
       value: value || C.PRICE || 0,

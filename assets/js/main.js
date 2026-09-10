@@ -29,11 +29,17 @@
       banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#0f172a;color:#fff;padding:1rem;z-index:1000;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem;font-size:0.875rem;box-shadow:0 -4px 12px rgba(0,0,0,0.2)';
       const cookieText = (window.SITE_CONFIG && window.SITE_CONFIG.COOKIE_TEXT) || 'We use cookies to improve your experience and for analytics.';
       const cookieAccept = (window.SITE_CONFIG && window.SITE_CONFIG.COOKIE_ACCEPT) || 'Accept';
+      const cookieReject = (window.SITE_CONFIG && window.SITE_CONFIG.COOKIE_REJECT) || 'Decline';
       const cookieLearn = (window.SITE_CONFIG && window.SITE_CONFIG.COOKIE_LEARN) || 'Learn more';
       banner.innerHTML = '<span>' + cookieText + '</span>' +
         '<a href="/' + (window.SITE_CONFIG && window.SITE_CONFIG.GEO || 'it') + '/cookie-policy.html" style="color:#86efac;text-decoration:underline">' + cookieLearn + '</a>' +
+        '<button id="df-cookie-reject" style="background:transparent;color:#cbd5e1;border:1px solid #475569;padding:0.5rem 1rem;border-radius:0.375rem;cursor:pointer;font-weight:600">' + cookieReject + '</button>' +
         '<button id="df-cookie-ok" style="background:#16a34a;color:#fff;border:none;padding:0.5rem 1.25rem;border-radius:0.375rem;cursor:pointer;font-weight:700">' + cookieAccept + '</button>';
       document.body.appendChild(banner);
+      document.getElementById('df-cookie-reject').addEventListener('click', function () {
+        localStorage.setItem(KEY, '0');
+        banner.remove();
+      });
       document.getElementById('df-cookie-ok').addEventListener('click', function () {
         localStorage.setItem(KEY, '1');
         banner.remove();
