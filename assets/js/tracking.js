@@ -364,6 +364,8 @@
 
   function initCookieBanner() {
     if (window.__dfCookieBannerInit) return;
+    // le pagine che lo disattivano non devono vederlo comparire
+    if (window.SITE_CONFIG && window.SITE_CONFIG.COOKIE_BANNER === false) return;
     window.__dfCookieBannerInit = true;
     const KEY = 'df_cookie_consent';
     try {
